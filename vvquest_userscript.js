@@ -12,6 +12,7 @@
 // @grant        GM_notification
 // @grant        GM_addStyle
 // @connect      api.zvv.quest
+// @license      CC BY-NC-SA 4.0
 // ==/UserScript==
 
 (function() {
