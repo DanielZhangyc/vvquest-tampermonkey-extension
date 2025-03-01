@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         VVQuest 表情包助手
-// @namespace    http://tampermonkey.net/
+// @name         VVQuest - VV表情包助手
+// @namespace    https://zvv.quest/
 // @version      0.1
 // @description  基于 VVQuest 项目的表情包检索工具，适用于百度和知乎
-// @author       YourName
+// @author       xy0v0
 // @match        *://*.baidu.com/*
 // @match        *://*.zhihu.com/*
 // @icon         https://cn-sy1.rains3.com/pic/pic/2025/03/e0607ef1dfd70ae54612c795de0c4de5.png
@@ -24,7 +24,7 @@
         cooldownTime: 3000, // 无联网搜索时冷却时间，单位毫秒
         enhancedCooldownTime: 10000, // 联网搜索时冷却时间，单位毫秒
         lastRequestTime: 0,
-        enableNetworkSearch: true, // 是否启用联网搜索功能
+        enableNetworkSearch: false, // 是否启用联网搜索功能
         isSearching: false, // 是否正在搜索
     };
     
@@ -110,6 +110,7 @@
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.25);
             animation: vvquestFadeIn 0.3s ease;
+            padding-bottom: 30px;
         }
         @keyframes vvquestFadeIn {
             from {opacity: 0; transform: translateY(-20px);}
@@ -240,6 +241,28 @@
             display: none;
             flex-direction: column;
             gap: 20px;
+            max-height: 50vh;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        
+        /* 调整滚动条样式 */
+        .vvquest-results::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .vvquest-results::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .vvquest-results::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        
+        .vvquest-results::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
         
         /* AI解析结果样式 */
@@ -634,7 +657,7 @@
                 
                 <div class="vvquest-checkbox-container">
                     <input type="checkbox" id="vvquest-network-search" class="vvquest-checkbox" ${config.enableNetworkSearch ? 'checked' : ''}>
-                    <label for="vvquest-network-search">启用联网搜索</label>
+                    <label for="vvquest-network-search">启用联网搜索 ( beta，不稳定，遇到错误请关闭 )</label>
                 </div>
                 
                 <!-- 加载指示器 -->
