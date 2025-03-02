@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         VVQuest - VV表情包助手
 // @namespace    https://zvv.quest/
-// @version      0.1
+// @version      0.1.1
 // @description  基于 VVQuest 项目的表情包检索工具，适用于百度和知乎
 // @author       xy0v0
 // @match        *://*.baidu.com/*
@@ -98,20 +98,23 @@
             height: 100%;
             background-color: rgba(0,0,0,0.7);
             backdrop-filter: blur(3px);
+            padding-bottom: 40px;
         }
         .vvquest-modal-content {
             background: #ffffff;
-            margin: 5% auto;
+            margin: 5% auto 15% auto;
             padding: 25px;
             border: none;
             width: 480px;
             max-width: 90%;
-            max-height: 90vh;
+            max-height: 75vh;
             overflow-y: auto;
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.25);
             animation: vvquestFadeIn 0.3s ease;
-            padding-bottom: 30px;
+            padding-bottom: 40px;
+            display: flex;
+            flex-direction: column;
         }
         @keyframes vvquestFadeIn {
             from {opacity: 0; transform: translateY(-20px);}
@@ -278,6 +281,27 @@
             font-size: 14px;
             line-height: 1.6;
             color: #333;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        
+        /* AI解析结果滚动条样式 */
+        .vvquest-ai-explanation::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .vvquest-ai-explanation::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .vvquest-ai-explanation::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        
+        .vvquest-ai-explanation::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
         
         /* 表情包项目样式 */
