@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         VVQuest - VV表情包助手
 // @namespace    https://zvv.quest/
-// @version      0.1.1
+// @version      0.1.2
 // @description  基于 VVQuest 项目的表情包检索工具，适用于百度和知乎
 // @author       xy0v0
 // @match        *://*.baidu.com/*
